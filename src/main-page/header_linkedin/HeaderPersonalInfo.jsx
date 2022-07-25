@@ -7,7 +7,7 @@ import {MdEmail} from 'react-icons/md';
 const HeaderPersonalInfo = () => {
     return (
         <React.Fragment>
-            <header className='header-top-container'>
+            <header className='header-personal-info-container'>
                 <address className='header-email-wrapper'>
                     <MdEmail className='email-icon'/>
                     <a href="mailto:urbaniak.michal@yahoo.com">Send Email</a>
