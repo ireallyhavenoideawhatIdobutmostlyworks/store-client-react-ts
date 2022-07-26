@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import logo from '../../main-page/logo.png'
 import {AiOutlineUser} from 'react-icons/ai';
 import {BsSearch, BsBasket3} from 'react-icons/bs';
 import './HeaderCategories.scss';
