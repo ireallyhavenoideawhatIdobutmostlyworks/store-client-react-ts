@@ -11,23 +11,21 @@ const HeaderCategories = () => {
         <React.Fragment>
             <header className='header-categories-container'>
                 <section className='header-categories-wrapper'>
-                    <div className='header-logo'>
-                        <Link className="header-logo-link" to='/' title="App Demo">
-                            <img className="header-logo-img" src={logo} alt="App Demo"></img>
-                        </Link>
-                    </div>
-                    <div className='header-categories'>
-                        <nav>Electronics</nav>
-                        <nav>For Home</nav>
-                        <nav>DIY</nav>
-                        <nav>Sport</nav>
-                        <nav>Supply</nav>
-                        <nav>Extra</nav>
-                        <nav>Outdoor</nav>
-                        <nav>Fire Sale</nav>
-                        <nav>All</nav>
-                    </div>
-                    <div className='header-options'>
+                    <nav className='header-logo'>
+                        <Link className='header-logo-link' to='/'>E-Store</Link>
+                    </nav>
+                    <nav className='header-categories'>
+                        <Link className='header-categories-link' to='/electronics'>Electronics</Link>
+                        <Link className='header-categories-link' to='/for-home'>For Home</Link>
+                        <Link className='header-categories-link' to='/dyi'>DIY</Link>
+                        <Link className='header-categories-link' to='/wport'>Sport</Link>
+                        <Link className='header-categories-link' to='/supply'>Supply</Link>
+                        <Link className='header-categories-link' to='/extra'>Extra</Link>
+                        <Link className='header-categories-link' to='/outdoor'>Outdoor</Link>
+                        <Link className='header-categories-link' to='/fire-sale'>Fire Sale</Link>
+                        <Link className='header-categories-link' to='/all'>All</Link>
+                    </nav>
+                    <nav className='header-options'>
                         <div className='search'>
                             <Link to='/search'><BsSearch className="header-user-tools-icon"/></Link> 
                         </div>
@@ -37,7 +35,7 @@ const HeaderCategories = () => {
                         <div className='cart'>
                             <Link to='/cart'><BsBasket3 className="header-user-tools-icon"/></Link> 
                         </div>
-                    </div>
+                    </nav>
                 </section>
             </header>
         </React.Fragment>

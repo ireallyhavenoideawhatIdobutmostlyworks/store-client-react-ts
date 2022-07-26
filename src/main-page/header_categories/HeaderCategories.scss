@@ -1,5 +1,11 @@
 .header-categories-container {
-    background-color: #B6CFF2;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 200px 0 200px;
+    font-family: Stabil Grotesk;
+    height: 82px;
+    background: #B6CFF2;
 }
 
 .header-categories-wrapper {
@@ -7,12 +13,35 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-
+    gap: 200px;
+    
 }
 
-.header-logo, .header-categories, .header-options {
+.header-logo-link {
+    font-size: xxx-large;
+    font-weight: 900;
+}
+
+.header-logo-link, .header-categories-link {
+    text-decoration: none;
+    color: #1E0033;
+}
+
+.header-categories, .header-options {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.header-categories {
+    font-weight: 400;
+    color: #1E0033;
+    font-size: x-large;
+}
+
+.header-user-tools-icon {
+    height: 35px;
+    width: 35px;
+    color: #1a1a1a;
 }
