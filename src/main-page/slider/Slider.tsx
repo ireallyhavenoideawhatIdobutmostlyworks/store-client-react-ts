@@ -1,5 +1,5 @@
 import React from 'react';
-import './HeaderSlider.scss';
+import './Slider.scss';
 import {TbTruckDelivery} from 'react-icons/tb';
 import {Link} from 'react-router-dom';
 import testImg from './test-img.jpg';
@@ -9,7 +9,7 @@ import sale from './sale.jpg';
 const HeaderSlider = () => {
     return (
         <React.Fragment>
-            <header className="slider-container">
+            <main className="slider-container">
                 <section className="slider-wrapper">
                     <div className="slider-title-wrapper">
                         <div className="slider-title">
@@ -21,7 +21,7 @@ const HeaderSlider = () => {
                             <div className="slider-price-details">
                                 <p>Cena sugerowana</p>
                                 <p>954,95 zł</p>
-                                <p>30 % zniżki</p>
+                                <p>30% zniżki</p>
                             </div>
                                 <div className="slider-price">
                                 <p>Teraz!</p>
@@ -39,9 +39,9 @@ const HeaderSlider = () => {
                             </div>
 
                         <div>
-                            <section className="slider-image">
+                            <figure className="slider-image">
                                 <img src={testImg}></img>
-                            </section>
+                            </figure>
                         </div>
                     </div>
                 </section>
@@ -72,11 +72,11 @@ const HeaderSlider = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="product-sale-img">
+                    <figure className="product-sale-img">
                         <img src={sale}></img>
-                    </div>
+                    </figure>
                 </section>
-            </header>
+            </main>
         </React.Fragment>
     )
 }
