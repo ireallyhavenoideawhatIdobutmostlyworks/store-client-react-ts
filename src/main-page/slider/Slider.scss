@@ -1,0 +1,202 @@
+.slider-container {
+    display: flex;
+    flex-direction: row;
+    margin: 25px 310px 0 310px;
+
+    .slider-wrapper {
+        display: flex;
+        flex-direction: column;
+        flex: 3;
+    }
+
+    .slider-details-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1;
+    }
+
+    .slider-info-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .slider-info {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .slider-title {
+
+        p {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+    }
+
+    .slider-price-details { 
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: #999;
+        font-weight: 900;
+        line-height: 1.5;
+    
+        p:nth-of-type(1) {      
+            font-size: 0.875rem;
+            margin-right: 8px;  
+        }
+    
+        p:nth-of-type(2) {
+            margin-right: 8px;
+            text-decoration: line-through;
+        }
+    
+        p:nth-of-type(3) {       
+            color: #1E0033;
+        }
+    }
+
+    .slider-price {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    
+        p:nth-of-type(1) {      
+            color: #FC5628;
+            margin-right: 10px;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+    
+        p:nth-of-type(2) {
+            font-size: 2.125rem;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+    }
+
+    .slider-delivery-price {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    
+        svg {      
+            fill: currentColor;
+            width: 1em;
+            height: 1em;
+            display: inline-block;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            user-select: none;
+            color: #999;
+            border: 1px solid #999;
+            padding: 1px;
+            margin-right: 6px;
+            border-radius: 50px;
+        }
+    
+        p {
+            color: #888;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding-left: 8px;
+        }
+    }
+
+    .slider-details-link {
+
+        a {
+            background-color: #FC5628;
+            border-radius: 10px;
+            font-size: 32px;
+            line-height: 1.75;
+            text-decoration: none;
+            color: #fff;
+            padding: 15px;
+            position: absolute;
+            bottom: 0;
+            font-weight: 900;
+        }
+    }
+
+    .slider-subscribe {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    
+        input {
+            margin-right: 8px;
+            padding: 10px 15px 10px 15px;
+            border-radius: 10px;
+            width: 100%;
+        }
+    
+        input::placeholder {
+            color: #1E0033;
+            font-weight: 700;
+        }
+    
+        button {
+            height: 38px;
+            font-size: 0.75rem;
+            color: #fff;
+            background-color: #FC5628;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 10px;
+        }
+    }
+
+    .product-advantages-wrapper {
+        display: flex;
+        flex-direction: column;
+    
+        h2 {
+            padding: 20px 0 5px 0;
+            font-size: 0.875rem;
+        }
+    }
+    
+    .product-adventages-details {
+        padding: 16px 8px 16px 8px;
+        font-size: 0.875rem;
+        background: #efefef;
+        font-weight: 700;
+        
+    }
+
+    .product-adventages-detail-wrapper {
+        box-shadow: 0 0 2px rgba(0, 0, 0, 50%);
+    }
+
+    .product-adventages-description-wrapper {
+
+        p {
+            padding: 16px;
+            font-size: 0.875rem;
+            font-weight: 900;
+            line-height: 1.43;
+        }
+    
+        a {
+            text-decoration: none;
+            color: #6EA9E5;
+            padding: 0 16px 8px 16px;
+            float: right;
+        }
+    }
+    
+    .product-sale-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        img {
+            height: 100px;
+        }
+    }
+}
