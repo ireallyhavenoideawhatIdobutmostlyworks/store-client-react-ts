@@ -1,13 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-<<<<<<< HEAD
-=======
-import logo from '../../main-page/logo.png'
->>>>>>> d75a422bf9e2ca4b5d149c187987d43f8cf80c30
 import {AiOutlineUser} from 'react-icons/ai';
 import {BsSearch, BsBasket3} from 'react-icons/bs';
 import './HeaderCategories.scss';
-
 
 const HeaderCategories = () => {
     return (
