@@ -4,7 +4,7 @@ import './Register.scss';
 const Register = () => {
     return (
         <React.Fragment>
-            <header className='header-personal-info-container'>222
+            <header className='register-container'>
 
             </header>
         </React.Fragment>
