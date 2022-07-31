@@ -3,7 +3,6 @@ import './HeaderPersonalInfo.scss';
 import {BsLinkedin} from 'react-icons/bs';
 import {MdEmail} from 'react-icons/md';
 
-
 const HeaderPersonalInfo = () => {
     return (
         <React.Fragment>
