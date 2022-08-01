@@ -4,7 +4,7 @@ import Slider from './main-page/slider/Slider';
 import HeaderCategories from './main-page/header_categories/HeaderCategories';
 import HeaderPersonalInfo from './main-page/header_linkedin/HeaderPersonalInfo';
 import LoginRegister from './login_register_page/LoginRegister';
-
+import RegisterForm from "./login_register_page/register_form/RegisterForm";
 
 function App() {
     return (
@@ -13,8 +13,11 @@ function App() {
             <HeaderCategories></HeaderCategories>
 
             <Routes>
-                <Route path="user" element={ <LoginRegister />}></Route>
                 <Route path="" element={ <Slider />}></Route>
+                <Route path="/user">
+                    <Route index element={<LoginRegister />} />  
+                    <Route path="register" element={ <RegisterForm /> }></Route>
+                </Route>
             </Routes>
             
         </BrowserRouter>
