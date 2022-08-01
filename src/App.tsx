@@ -4,7 +4,7 @@ import Slider from './main-page/slider/Slider';
 import HeaderCategories from './main-page/header_categories/HeaderCategories';
 import HeaderPersonalInfo from './main-page/header_linkedin/HeaderPersonalInfo';
 import LoginRegister from './login_register_page/LoginRegister';
-import RegisterForm from "./login_register_page/register_form/RegisterForm";
+import RegisterForm from "./login_register_page/register/RegisterForm";
 
 function App() {
     return (

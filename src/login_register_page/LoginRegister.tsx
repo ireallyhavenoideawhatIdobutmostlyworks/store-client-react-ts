@@ -38,7 +38,6 @@ const LoginRegister = () => {
                     <div className="form-wrapper">
                         <div className="form-action-wrapper">
                             <Link to="register">Register now!</Link>
-                            <button>Register</button>
                         </div>
                     </div>
                 </section>

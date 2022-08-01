@@ -40,7 +40,7 @@ const RegisterForm = () => {
                     </div>
                     <div className="form-wrapper">
                         <div className="form-action-wrapper">
-                            <Link to="private-policy">Register now!</Link>
+                            <Link to="private-policy">Full private policy</Link>
                         </div>
                     </div>
                 </section>
