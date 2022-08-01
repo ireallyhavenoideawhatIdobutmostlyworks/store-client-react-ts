@@ -5,7 +5,7 @@ import './LoginRegister.scss';
 const LoginRegister = () => {
     return (
         <React.Fragment>
-            <section className='login-register-container'>
+            <section className='form-section'>
                 <section className="login-container">
                     <div className="login-title-wrapper">
                         <h3>Login</h3>

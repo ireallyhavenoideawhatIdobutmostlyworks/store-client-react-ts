@@ -6,27 +6,27 @@ import './RegisterForm.scss';
 const RegisterForm = () => {
     return (
         <React.Fragment>
-            <section className='register-form-container'>
-                <section className="register-container">
-                    <div className="register-form-title-wrapper">
+            <section className='form-section'>
+                <section className="form-container">
+                    <div className="form-title-wrapper">
                         <h3>Register now!</h3>
                     </div>
-                    <div className="register-form-wrapper">
-                        <form className="register-form">
-                            <div className="register-form-input-wrapper">
-                                <label className="email-label">E-mail address</label>
-                                <div className="email-input">
+                    <div>
+                        <form className="form-wrapper">
+                            <div className="form-input-wrapper">
+                                <label>E-mail address</label>
+                                <div>
                                     <input type="email" placeholder="Email address..." aria-invalid="false" ></input>
                                 </div>
                             </div>
-                            <div className='password-input-wrapper'>
-                                <label className="email-label">Password</label>
-                                <div className="password-input">
+                            <div className='form-input-wrapper'>
+                                <label>Password</label>
+                                <div>
                                     <input type="password" placeholder="Password..." aria-invalid="false" ></input>
                                 </div>
                             </div>
-                            <div className="register-form-action-wrapper">
-                                <button>Register</button>
+                            <div>
+                                <button className="form-btn">Register</button>
                             </div>
                         </form>
                     </div>

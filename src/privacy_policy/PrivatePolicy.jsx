@@ -5,7 +5,7 @@ import './PrivatePolicy.scss';
 const PrivatePolicy = () => {
     return (
         <React.Fragment>
-            <section className="private-policy-container">
+            <section className="form-section">
                 <div className="private-policytitle-wrapper">
                     <h3>Private Policy</h3>
                 </div>
