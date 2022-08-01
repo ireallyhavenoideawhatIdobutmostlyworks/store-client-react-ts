@@ -13,7 +13,6 @@ body * {
     box-shadow: 0 0 2px rgba(0, 0, 0, 50%);
     border-radius: 10px;
     flex: 1 1 0;
-    width: 0;
     font-weight: 500;
 }
 
@@ -28,14 +27,21 @@ body * {
 
 .form-wrapper {
     padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 16px;
+
+    a {
+        text-decoration: none;
+        color: #6EA9E5;
+    }
 }
 
 .form-input-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 12px;
-    gap: 20px;
 
     label {
         width: 100px;
@@ -53,11 +59,23 @@ body * {
     }
 }
 
-.form-btn {
-    height: 38px;
-    color: #fff;
-    background-color: #FC5628;
-    font-weight: 700;
-    text-transform: uppercase;
-    border-radius: 10px;
+.form-action-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    button {
+        height: 38px;
+        color: #fff;
+        background-color: #FC5628;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-radius: 10px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #6EA9E5;
+    }
 }

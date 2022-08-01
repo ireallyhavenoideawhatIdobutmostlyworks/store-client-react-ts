@@ -25,21 +25,23 @@ const RegisterForm = () => {
                                     <input type="password" placeholder="Password..." aria-invalid="false" ></input>
                                 </div>
                             </div>
-                            <div>
-                                <button className="form-btn">Register</button>
+                            <div className="form-action-wrapper">
+                                <button>Register</button>
                             </div>
                         </form>
                     </div>
                 </section>
-                <section className='register-private-policy-container'>
-                    <div className="register-private-policy-title-wrapper">
+                <section className="form-container">
+                    <div className="form-title-wrapper">
                         <h3>Private Policy</h3>
                     </div>
                     <div>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industryLorem Ipsum...</p>
                     </div>
-                    <div className="register-private-policy-action-wrapper">
-                        <Link to="private-policy">Full Private Policy</Link>
+                    <div className="form-wrapper">
+                        <div className="form-action-wrapper">
+                            <Link to="private-policy">Register now!</Link>
+                        </div>
                     </div>
                 </section>
             </section>

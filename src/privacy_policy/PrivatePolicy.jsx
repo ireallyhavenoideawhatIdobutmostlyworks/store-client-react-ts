@@ -6,7 +6,7 @@ const PrivatePolicy = () => {
     return (
         <React.Fragment>
             <section className="form-section">
-                <div className="private-policytitle-wrapper">
+                <div className="private-policy-title-wrapper">
                     <h3>Private Policy</h3>
                 </div>
                 <div className="private-policy-wrapper">
@@ -18,8 +18,10 @@ iBOOD szanuje prywatność użytkowników swojej strony, wszystkie dane, które 
 
                     </p>
                 </div>
-                <div className="full-private-policy-wrapper">
-                    <Link to="/private-policy">Forgot password?</Link> 
+                <div className="form-wrapper">
+                    <div className="form-action-wrapper">
+                        <Link to="private-policy">Register now!</Link>
+                    </div>
                 </div>
             </section>
         </React.Fragment>
