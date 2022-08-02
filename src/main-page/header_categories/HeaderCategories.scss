@@ -6,39 +6,42 @@
     font-family: Stabil Grotesk;
     height: 82px;
     background: #B6CFF2;
-}
 
-.header-categories-wrapper {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 200px;
-}
-
-.header-logo-link {
-    font-size: xxx-large;
-    font-weight: 900;
-}
-
-.header-logo-link, 
-.header-user-tools-icon, 
-.header-categories-link {
-    text-decoration: none;
-    color: #1E0033;
-}
-
-.header-categories, 
-.header-options {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-}
-
-.header-categories {
-    font-size: x-large;
-}
-
-.header-user-tools-icon {
-    height: 35px;
-    width: 35px;
+    .header-categories-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 200px;
+        
+    }
+    
+    .header-logo-link {
+        font-size: xxx-large;
+        font-weight: 900;
+    }
+    
+    .header-logo-link, .header-categories-link {
+        text-decoration: none;
+        color: #1E0033;
+    }
+    
+    .header-categories, .header-options {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .header-categories {
+        font-weight: 400;
+        color: #1E0033;
+        font-size: x-large;
+    }
+    
+    .header-user-tools-icon {
+        height: 35px;
+        width: 35px;
+        color: #1a1a1a;
+    }
 }
