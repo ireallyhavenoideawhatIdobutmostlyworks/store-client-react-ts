@@ -29,7 +29,6 @@ const Login = () => {
                         </div>
                     </form>
                 </div>
-
             </section>
         </React.Fragment>
     )
