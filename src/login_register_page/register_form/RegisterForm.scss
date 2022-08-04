@@ -1,18 +1,18 @@
-.login-register-container {
+.register-form-container {
     display: flex;
     justify-content: center;
     margin: 200px 450px 50px 450px;
     gap: 20px;
 }
 
-.login-container {
+.register-container {
     box-shadow: 0 0 2px rgba(0, 0, 0, 50%);
     border-radius: 10px;
     flex: 1 1 0;
     width: 0;
     font-weight: 500;
 
-    .login-title-wrapper {
+    .register-form-title-wrapper {
         background-color: #B6CFF2;
         margin: 0px 0px 16px;
         padding: 8px 0px 8px 16px;
@@ -21,13 +21,13 @@
         border-top-right-radius: 10px;
     }
 
-    .login-form-wrapper {
+    .register-form-wrapper {
 
-        .login-form {
+        .register-form {
             padding: 16px;
         }
 
-        .login-input-wrapper,
+        .register-form-input-wrapper,
         .password-input-wrapper,
         .login-action-wrapper {
             display: flex;
@@ -52,7 +52,7 @@
             }
         }
 
-        .login-action-wrapper {
+        .register-form-action-wrapper {
 
             button {
                 height: 38px;
@@ -62,23 +62,22 @@
                 text-transform: uppercase;
                 border-radius: 10px;
             }
-
-            a {
-                text-decoration: none;
-                color: #6EA9E5;
-            }
         }
     }
 }
 
-.register-container {
+.register-private-policy-container {
     box-shadow: 0 0 2px rgba(0, 0, 0, 50%);
     border-radius: 10px;
     flex: 1 1 0;
     width: 0;
     font-weight: 500;
 
-    .register-title-wrapper {
+    p {
+        padding: 16px;
+    }
+
+    .register-private-policy-title-wrapper {
         background-color: #B6CFF2;
         margin: 0px 0px 16px;
         padding: 8px 0px 8px 16px;
@@ -87,22 +86,13 @@
         border-top-right-radius: 10px;
     }
 
-    .register-action-wrapper {
+    .register-private-policy-action-wrapper {
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin-bottom: 12px;
         gap: 20px;
         padding: 16px;
-
-        button {
-            height: 38px;
-            color: #fff;
-            background-color: #FC5628;
-            font-weight: 700;
-            text-transform: uppercase;
-            border-radius: 10px;
-        }
 
         a {
             text-decoration: none;
