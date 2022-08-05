@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './LoginRegister.scss';
+import PrivatePolicy from '../../privacy_policy/PrivatePolicy';
+import './RegisterForm.scss';
 
-const LoginRegister = () => {
+const RegisterForm = () => {
     return (
         <React.Fragment>
             <section className='form-section'>
                 <section className="form-container">
                     <div className="form-title-wrapper">
-                        <h3>Login</h3>
+                        <h3>Register now!</h3>
                     </div>
                     <div>
                         <form className="form-wrapper">
@@ -25,19 +26,21 @@ const LoginRegister = () => {
                                 </div>
                             </div>
                             <div className="form-action-wrapper">
-                                <Link to="/forgot-password">Forgot password?</Link> 
-                                <button>Login</button>
+                                <button>Register</button>
                             </div>
                         </form>
                     </div>
                 </section>
-                <section className='form-container'>
+                <section className="form-container">
                     <div className="form-title-wrapper">
-                        <h3>Register</h3>
+                        <h3>Private Policy</h3>
+                    </div>
+                    <div>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industryLorem Ipsum...</p>
                     </div>
                     <div className="form-wrapper">
                         <div className="form-action-wrapper">
-                            <Link to="register">Register now!</Link>
+                            <Link to="private-policy">Full private policy</Link>
                         </div>
                     </div>
                 </section>
@@ -46,4 +49,4 @@ const LoginRegister = () => {
     )
 }
 
-export default LoginRegister;
+export default RegisterForm;
