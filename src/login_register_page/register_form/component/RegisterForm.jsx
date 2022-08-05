@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PrivatePolicy from '../../privacy_policy/PrivatePolicy';
 import './RegisterForm.scss';
 
 const RegisterForm = () => {

@@ -1,10 +1,10 @@
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 import './App.scss';
-import Slider from './main-page/slider/Slider';
-import HeaderCategories from './main-page/header_categories/HeaderCategories';
-import HeaderPersonalInfo from './main-page/header_linkedin/HeaderPersonalInfo';
+import Slider from './main-page/slider/component/Slider';
+import HeaderCategories from './main-page/header_categories/component/HeaderCategories';
+import HeaderPersonalInfo from './main-page/header_linkedin/component/HeaderPersonalInfo';
 import LoginRegister from './login_register_page/LoginRegister';
-import RegisterForm from "./login_register_page/register_form/RegisterForm";
+import RegisterForm from "./login_register_page/register_form/component/RegisterForm";
 
 function App() {
     return (
