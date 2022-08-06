@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './RegisterForm.scss';
+import './Register.scss';
 
-const RegisterForm = () => {
+const Register = () => {
     return (
         <React.Fragment>
             <section className='form-section'>
@@ -50,4 +50,4 @@ const RegisterForm = () => {
     )
 }
 
-export default RegisterForm;
+export default Register;
