@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './LoginRegister.scss';
+import './Login.scss';
 
-const LoginRegister = () => {
+const Login = () => {
     return (
         <React.Fragment>
             <section className='form-section'>
@@ -46,4 +46,4 @@ const LoginRegister = () => {
     )
 }
 
-export default LoginRegister;
+export default Login;
