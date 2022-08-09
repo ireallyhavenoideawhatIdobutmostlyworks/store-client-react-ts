@@ -1,3 +1,6 @@
-export class a {
+export default class RegisterService {
+
+    
 
 }
+

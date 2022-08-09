@@ -57,6 +57,17 @@ body * {
         color: #1E0033;
         font-weight: 700;
     }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        
+        label {
+            color: red;
+            font-weight: 700;
+        }
+    }
 }
 
 .form-action-wrapper {
