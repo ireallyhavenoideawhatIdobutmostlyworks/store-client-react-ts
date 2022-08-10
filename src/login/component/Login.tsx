@@ -5,7 +5,7 @@ import './Login.scss';
 const Login = () => {
     return (
         <React.Fragment>
-            <section className='form-section'>
+            <section className="form-section">
                 <section className="form-container">
                     <div className="form-title-wrapper">
                         <h3>Login</h3>
@@ -18,7 +18,7 @@ const Login = () => {
                                     <input type="email" placeholder="Email address..." aria-invalid="false" ></input>
                                 </div>
                             </div>
-                            <div className='form-input-wrapper'>
+                            <div className="form-input-wrapper">
                                 <label>Password</label>
                                 <div>
                                     <input type="password" placeholder="Password..." aria-invalid="false" ></input>
@@ -31,7 +31,7 @@ const Login = () => {
                         </form>
                     </div>
                 </section>
-                <section className='form-container'>
+                <section className="form-container">
                     <div className="form-title-wrapper">
                         <h3>Register</h3>
                     </div>
