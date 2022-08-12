@@ -3,10 +3,8 @@ import { emailValidator, passwordValidator, confirmPasswordValidator } from './v
 
 const touchErrors = errors => {
     return Object.entries(errors).reduce((acc, [field, fieldError]) => {
-      acc[field] = {
-        ...fieldError,
-        dirty: true,
-      };
+      acc[field] = { ...fieldError, dirty: true };
+
       return acc;
     }, {});
   };
@@ -14,31 +12,11 @@ const touchErrors = errors => {
 
   export const useLoginFormValidator = form => {
     const [errors, setErrors] = useState({
-      firstName: {
-        dirty: false,
-        error: false,
-        message: "",
-      },
-      lastName: {
-        dirty: false,
-        error: false,
-        message: "",
-      },
-      email: {
-        dirty: false,
-        error: false,
-        message: "",
-      },
-      password: {
-        dirty: false,
-        error: false,
-        message: "",
-      },
-      confirmPassword: {
-        dirty: false,
-        error: false,
-        message: "",
-      },
+      firstName: { dirty: false,error: false,message: ""},
+      lastName: {dirty: false,error: false,message: ""},
+      email: {dirty: false,error: false,message: ""},
+      password: {dirty: false,error: false,message: ""},
+      confirmPassword: {dirty: false,error: false,message: ""}
     });
   
     const validateForm = ({ form, field, errors, forceTouchErrors = false }) => {

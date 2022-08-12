@@ -18,12 +18,12 @@ const Register = () => {
 
     const onUpdateField = e => {
         const field = e.target.name;
-        const nextFormState = {
-          ...form,
-          [field]: e.target.value,
-        };
+        const nextFormState = {...form, [field]: e.target.value};
+
         setForm(nextFormState);
+        
         if (errors[field].dirty)
+
           validateForm({
             form: nextFormState,
             errors,
