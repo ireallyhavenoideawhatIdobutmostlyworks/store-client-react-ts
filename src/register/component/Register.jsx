@@ -2,11 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Register.scss';
 
-
 const Register = () => {
-
-      
-
     return (
         <React.Fragment>
             <section className='form-section'>
