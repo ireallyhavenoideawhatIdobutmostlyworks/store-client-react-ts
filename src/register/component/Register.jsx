@@ -1,25 +1,33 @@
-import { React, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Register.scss';
 
 const Register = () => {
 
-    const [registerForm, setRegisterForm] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: "",
-        confirmPassword: ""
-    });
+    // const [allValuesRegisterForm, setRegisterForm] = useState({
+    //     firstName: "",
+    //     lastName: "",
+    //     email: "",
+    //     password: "",
+    //     confirmPassword: ""
+    // });
 
-     const onUpdateField = e => {
-
-
+    const initialValues = {
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+        confirmPassword: ''
     };
 
-      
+    const [values, setValues] = useState(initialValues);  
 
-    
+    const onUpdateField = e => {
+        setValues({
+            ...values,                                
+            [e.target.name]: e.target.value,          
+          });
+    };
 
     const onSubmitForm = e => {
         e.preventDefault();
@@ -39,7 +47,7 @@ const Register = () => {
                                 <div>
                                     <input 
                                         onChange={onUpdateField}
-                                        value={firstName}
+                                        // value={firstName}
                                         type="text" 
                                         placeholder="First name..." 
                                         name="firstName">
@@ -51,7 +59,7 @@ const Register = () => {
                                 <div>
                                     <input 
                                         onChange={onUpdateField}
-                                        value={lastName}
+                                        // value={lastName}
                                         type="text" 
                                         placeholder="Last name..." 
                                         name="lastName">
@@ -63,7 +71,7 @@ const Register = () => {
                                 <div>
                                     <input 
                                         onChange={onUpdateField}
-                                        value={email}
+                                        // value={email}
                                         type="email" 
                                         placeholder="Email address..." 
                                         name="email">
@@ -75,7 +83,7 @@ const Register = () => {
                                 <div>
                                     <input 
                                         onChange={onUpdateField}
-                                        value={password}
+                                        // value={password}
                                         type="password" 
                                         placeholder="Password..." 
                                         name="password">
@@ -87,7 +95,7 @@ const Register = () => {
                                 <div>
                                     <input 
                                         onChange={onUpdateField}
-                                        value={confirmPassword}
+                                        // value={confirmPassword}
                                         type="password" 
                                         placeholder="Confirm password..." 
                                         name="confirmPassword">
