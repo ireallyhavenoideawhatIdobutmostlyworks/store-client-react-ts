@@ -1,42 +1,31 @@
 import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Register.scss';
-import { useLoginFormValidator } from '../service/useLoginFormValidator';
 
 const Register = () => {
 
-    const [form, setForm] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: "",
-        confirmPassword: ""
-    });
+    // const [form, setForm] = useState({
+    //     firstName: "",
+    //     lastName: "",
+    //     email: "",
+    //     password: "",
+    //     confirmPassword: ""
+    // });
 
-    const { errors, validateForm, onBlurField } = useLoginFormValidator(form);
+    // const { errors, validateForm, onBlurField } = useLoginFormValidator(form);
 
 
-    const onUpdateField = e => {
-        const field = e.target.name;
-        const nextFormState = {...form, [field]: e.target.value};
+    // const onUpdateField = e => {
 
-        setForm(nextFormState);
+
+    //   };
+
+    //   const onSubmitForm = e => {
+    //     e.preventDefault();
         
-        if (errors[field].dirty)
 
-          validateForm({
-            form: nextFormState,
-            errors,
-            field,
-          });
-      };
-
-      const onSubmitForm = e => {
-        e.preventDefault();
-        const { isValid } = validateForm({ form, errors, forceTouchErrors: true });
-        if (!isValid) return;
-        alert(JSON.stringify(form, null, 2));
-      };
+    //     alert(JSON.stringify(form, null, 2));
+    //   };
       
 
     return (
@@ -47,40 +36,57 @@ const Register = () => {
                         <h3>Register now!</h3>
                     </div>
                     <div>
-                        <form className="form-wrapper" onSubmit={onSubmitForm}>
+                        <form className="form-wrapper" 
+                        // onSubmit={onSubmitForm}
+                        >
                             <div className="form-input-wrapper">
                                 <label>First name</label>
                                 <div>
-                                    <input type="text" placeholder="First name..." name="firstName" value={form.firstName} onChange={onUpdateField}></input>
+                                    <input type="text" placeholder="First name..." name="firstName" 
+                                    // value={form.firstName} onChange={onUpdateField}
+                                    ></input>
                                     {/* <label>Mandatory</label> */}
                                 </div>
                             </div>
                             <div className="form-input-wrapper">
                                 <label>Last name</label>
                                 <div>
-                                    <input type="text" placeholder="Last name..." name="lastName" value={form.lastName} onChange={onUpdateField}></input>
+                                    <input type="text" placeholder="Last name..." name="lastName" 
+                                    // value={form.lastName} onChange={onUpdateField}
+                                    ></input>
                                     {/* <label>Mandatory</label> */}
                                 </div>
                             </div>
                             <div className="form-input-wrapper">
                                 <label>E-mail address</label> 
                                 <div>
-                                    <input className='{clsx(errors.email.dirty && errors.email.error && styles.formFieldError)}' 
-                                    type="text" placeholder="Email address..." name="email" value={form.email} onBlur={onBlurField} onChange={onUpdateField} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></input>                               
+                                    <input 
+                                    type="text" placeholder="Email address..." name="email" 
+                                    // value={form.email} 
+                                    // onBlur={onBlurField} 
+                                    // onChange={onUpdateField} 
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                    ></input>                               
                                     {/* <label>Mandatory</label> */}
                                 </div>
                             </div>
                             <div className='form-input-wrapper'>
                                 <label>Password</label>   
                                 <div>
-                                    <input type="password" placeholder="Password..." name="password" value={form.password} onChange={onUpdateField}></input>                              
+                                    <input type="password" placeholder="Password..." name="password" 
+                                    // value={form.password} 
+                                    // onChange={onUpdateField}
+                                    ></input>                              
                                     {/* <label>Mandatory</label> */}
                                 </div>                       
                             </div>
                             <div className='form-input-wrapper'>
                                 <label>Confirm password</label>   
                                 <div>
-                                    <input type="password" placeholder="Confirm password..." name="confirmPassword" value={form.confirmPassword} onChange={onUpdateField}></input>                              
+                                    <input type="password" placeholder="Confirm password..." name="confirmPassword"
+                                    //  value={form.confirmPassword} 
+                                    //  onChange={onUpdateField}
+                                     ></input>                              
                                     {/* <label>Mandatory</label> */}
                                 </div>                       
                             </div>
