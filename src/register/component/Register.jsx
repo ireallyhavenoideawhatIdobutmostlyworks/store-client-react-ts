@@ -15,35 +15,61 @@ const Register = () => {
                             <div className="form-input-wrapper">
                                 <label>First name</label>
                                 <div>
-                                    <input type="text" placeholder="First name..." aria-invalid="false" required="required"></input>
-                                    <label>Mandatory</label>
+                                    <input 
+                                        type="text" 
+                                        placeholder="First name..." 
+                                        name="firstName">
+                                    </input>
+                                    {/* <label>Mandatory</label> */}
                                 </div>
                             </div>
                             <div className="form-input-wrapper">
                                 <label>Last name</label>
                                 <div>
-                                    <input type="text" placeholder="Last name..." aria-invalid="false" required="required"></input>
-                                    <label>Mandatory</label>
+                                    <input 
+                                        type="text" 
+                                        placeholder="Last name..." 
+                                        name="lastName">
+                                    </input>
+                                    {/* <label>Mandatory</label> */}
                                 </div>
                             </div>
                             <div className="form-input-wrapper">
                                 <label>E-mail address</label> 
                                 <div>
-                                    <input type="email" placeholder="Email address..." aria-invalid="false" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></input>                               
-                                    <label>Mandatory</label>
+                                    <input 
+                                        type="email" 
+                                        placeholder="Email address..." 
+                                        name="email"
+                                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                                    </input>                               
+                                    {/* <label>Mandatory</label> */}
                                 </div>
                             </div>
                             <div className='form-input-wrapper'>
                                 <label>Password</label>   
                                 <div>
-                                    <input type="password" placeholder="Password..." aria-invalid="false" required="required"></input>                              
-                                    <label>Mandatory</label>
+                                    <input 
+                                        type="password" 
+                                        placeholder="Password..." 
+                                        name="password">
+                                    </input>                              
+                                    {/* <label>Mandatory</label> */}
+                                </div>                       
+                            </div>
+                            <div className='form-input-wrapper'>
+                                <label>Confirm password</label>   
+                                <div>
+                                    <input 
+                                        type="password" 
+                                        placeholder="Confirm password..." 
+                                        name="confirmPassword">
+                                    </input>                              
+                                    {/* <label>Mandatory</label> */}
                                 </div>                       
                             </div>
                             <div className="form-action-wrapper">
-                                <button 
-                                // onClick={}
-                                >Register</button>
+                                <button>Register</button>
                             </div>
                         </form>
                     </div>
