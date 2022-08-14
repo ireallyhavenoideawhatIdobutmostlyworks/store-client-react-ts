@@ -4,34 +4,24 @@ import './Register.scss';
 
 const Register = () => {
 
-    // const [allValuesRegisterForm, setRegisterForm] = useState({
-    //     firstName: "",
-    //     lastName: "",
-    //     email: "",
-    //     password: "",
-    //     confirmPassword: ""
-    // });
-
-    const initialValues = {
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
-        confirmPassword: ''
-    };
-
-    const [values, setValues] = useState(initialValues);  
+    const [allValuesRegisterForm, setValuesRegisterForm] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+        confirmPassword: ""
+    });
 
     const onUpdateField = e => {
-        setValues({
-            ...values,                                
+        setValuesRegisterForm({
+            ...allValuesRegisterForm,                                
             [e.target.name]: e.target.value,          
           });
     };
 
     const onSubmitForm = e => {
         e.preventDefault();
-        alert(JSON.stringify(values, null, 2));
+        alert(JSON.stringify(allValuesRegisterForm, null, 2));
     };
 
     return (
@@ -48,7 +38,7 @@ const Register = () => {
                                 <div>
                                     <input 
                                         onChange={onUpdateField}
-                                        // value={firstName}
+                                        value={allValuesRegisterForm.firstName}
                                         type="text" 
                                         placeholder="First name..." 
                                         name="firstName">
@@ -60,7 +50,7 @@ const Register = () => {
                                 <div>
                                     <input 
                                         onChange={onUpdateField}
-                                        // value={lastName}
+                                        value={allValuesRegisterForm.lastName}
                                         type="text" 
                                         placeholder="Last name..." 
                                         name="lastName">
@@ -72,7 +62,7 @@ const Register = () => {
                                 <div>
                                     <input 
                                         onChange={onUpdateField}
-                                        // value={email}
+                                        value={allValuesRegisterForm.email}
                                         type="email" 
                                         placeholder="Email address..." 
                                         name="email">
@@ -84,7 +74,7 @@ const Register = () => {
                                 <div>
                                     <input 
                                         onChange={onUpdateField}
-                                        // value={password}
+                                        value={allValuesRegisterForm.password}
                                         type="password" 
                                         placeholder="Password..." 
                                         name="password">
@@ -96,7 +86,7 @@ const Register = () => {
                                 <div>
                                     <input 
                                         onChange={onUpdateField}
-                                        // value={confirmPassword}
+                                        value={allValuesRegisterForm.confirmPassword}
                                         type="password" 
                                         placeholder="Confirm password..." 
                                         name="confirmPassword">
