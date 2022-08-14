@@ -5,7 +5,7 @@ import './Register.scss';
 const Register = () => {
 
     const onSubmitForm = e => {
-        console.log(e)
+        alert(e);
         e.preventDefault();
     };
 
@@ -26,7 +26,6 @@ const Register = () => {
                                         placeholder="First name..." 
                                         name="firstName">
                                     </input>
-                                    {/* <label>Mandatory</label> */}
                                 </div>
                             </div>
                             <div className="form-input-wrapper">
@@ -37,7 +36,6 @@ const Register = () => {
                                         placeholder="Last name..." 
                                         name="lastName">
                                     </input>
-                                    {/* <label>Mandatory</label> */}
                                 </div>
                             </div>
                             <div className="form-input-wrapper">
@@ -49,7 +47,6 @@ const Register = () => {
                                         name="email"
                                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                                     </input>                               
-                                    {/* <label>Mandatory</label> */}
                                 </div>
                             </div>
                             <div className='form-input-wrapper'>
@@ -60,7 +57,6 @@ const Register = () => {
                                         placeholder="Password..." 
                                         name="password">
                                     </input>                              
-                                    {/* <label>Mandatory</label> */}
                                 </div>                       
                             </div>
                             <div className='form-input-wrapper'>
@@ -71,7 +67,6 @@ const Register = () => {
                                         placeholder="Confirm password..." 
                                         name="confirmPassword">
                                     </input>                              
-                                    {/* <label>Mandatory</label> */}
                                 </div>                       
                             </div>
                             <div className="form-action-wrapper">
