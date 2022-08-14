@@ -1,11 +1,20 @@
-import React from 'react';
+import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Register.scss';
 
 const Register = () => {
 
+    const [form, setForm] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+        confirmPassword: ""
+    });
+
+    
+
     const onSubmitForm = e => {
-        alert(e);
         e.preventDefault();
     };
 
@@ -22,6 +31,7 @@ const Register = () => {
                                 <label>First name</label>
                                 <div>
                                     <input 
+                                        value={form.firstName}
                                         type="text" 
                                         placeholder="First name..." 
                                         name="firstName">
@@ -32,6 +42,7 @@ const Register = () => {
                                 <label>Last name</label>
                                 <div>
                                     <input 
+                                        value={form.lastName}
                                         type="text" 
                                         placeholder="Last name..." 
                                         name="lastName">
@@ -42,10 +53,10 @@ const Register = () => {
                                 <label>E-mail address</label> 
                                 <div>
                                     <input 
+                                        value={form.email}
                                         type="email" 
                                         placeholder="Email address..." 
-                                        name="email"
-                                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                                        name="email">
                                     </input>                               
                                 </div>
                             </div>
@@ -53,6 +64,7 @@ const Register = () => {
                                 <label>Password</label>   
                                 <div>
                                     <input 
+                                        value={form.password}
                                         type="password" 
                                         placeholder="Password..." 
                                         name="password">
@@ -63,6 +75,7 @@ const Register = () => {
                                 <label>Confirm password</label>   
                                 <div>
                                     <input 
+                                        value={form.confirmPassword}
                                         type="password" 
                                         placeholder="Confirm password..." 
                                         name="confirmPassword">
