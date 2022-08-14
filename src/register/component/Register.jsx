@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 import './Register.scss';
 
 const Register = () => {
+
+    const onSubmitForm = e => {
+        console.log(e)
+        e.preventDefault();
+    };
+
     return (
         <React.Fragment>
             <section className='form-section'>
@@ -11,7 +17,7 @@ const Register = () => {
                         <h3>Register now!</h3>
                     </div>
                     <div>
-                        <form className="form-wrapper">
+                        <form className="form-wrapper" onSubmit={onSubmitForm}>
                             <div className="form-input-wrapper">
                                 <label>First name</label>
                                 <div>
