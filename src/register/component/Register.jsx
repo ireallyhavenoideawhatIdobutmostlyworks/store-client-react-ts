@@ -4,13 +4,20 @@ import './Register.scss';
 
 const Register = () => {
 
-    const [form, setForm] = useState({
+    const [registerForm, setRegisterForm] = useState({
         firstName: "",
         lastName: "",
         email: "",
         password: "",
         confirmPassword: ""
     });
+
+     const onUpdateField = e => {
+
+
+    };
+
+      
 
     
 
@@ -31,7 +38,8 @@ const Register = () => {
                                 <label>First name</label>
                                 <div>
                                     <input 
-                                        value={form.firstName}
+                                        onChange={onUpdateField}
+                                        value={firstName}
                                         type="text" 
                                         placeholder="First name..." 
                                         name="firstName">
@@ -42,7 +50,8 @@ const Register = () => {
                                 <label>Last name</label>
                                 <div>
                                     <input 
-                                        value={form.lastName}
+                                        onChange={onUpdateField}
+                                        value={lastName}
                                         type="text" 
                                         placeholder="Last name..." 
                                         name="lastName">
@@ -53,7 +62,8 @@ const Register = () => {
                                 <label>E-mail address</label> 
                                 <div>
                                     <input 
-                                        value={form.email}
+                                        onChange={onUpdateField}
+                                        value={email}
                                         type="email" 
                                         placeholder="Email address..." 
                                         name="email">
@@ -64,7 +74,8 @@ const Register = () => {
                                 <label>Password</label>   
                                 <div>
                                     <input 
-                                        value={form.password}
+                                        onChange={onUpdateField}
+                                        value={password}
                                         type="password" 
                                         placeholder="Password..." 
                                         name="password">
@@ -75,7 +86,8 @@ const Register = () => {
                                 <label>Confirm password</label>   
                                 <div>
                                     <input 
-                                        value={form.confirmPassword}
+                                        onChange={onUpdateField}
+                                        value={confirmPassword}
                                         type="password" 
                                         placeholder="Confirm password..." 
                                         name="confirmPassword">
