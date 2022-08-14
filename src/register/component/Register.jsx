@@ -31,6 +31,7 @@ const Register = () => {
 
     const onSubmitForm = e => {
         e.preventDefault();
+        alert(JSON.stringify(values, null, 2));
     };
 
     return (
