@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { RegisterService } from '../service/RegisterService';
 import './Register.scss';
 
 const Register = () => {
 
-    const [allValuesRegisterForm, setValuesRegisterForm] = useState({
+    const [valuesRegisterForm, setValuesRegisterForm] = useState({
         firstName: "",
         lastName: "",
         email: "",
@@ -12,17 +13,41 @@ const Register = () => {
         confirmPassword: ""
     });
 
-    const onUpdateField = e => {
-        setValuesRegisterForm({
-            ...allValuesRegisterForm,                                
-            [e.target.name]: e.target.value,          
-          });
+    
+    
+    const [error, setError] = useState(null);
+
+    const test = new RegisterService();
+
+    const onUpdateField = event => {
+
+        console.log(test.isFieldValid(event.target.value) + " " + event.target.name)
+
+        if (!test.isValidEmail(event.target.value)) {
+            setError('Email is invalid');
+        } else {
+            setError(null);
+        }
+
+        if (!test.isFieldValid(event.target.value)) {
+            setError('Field is invalid');
+        } else {
+            setError(null);
+        }
+
+     
+
+
+        setValuesRegisterForm({...valuesRegisterForm, [event.target.name]: event.target.value});
     };
 
-    const onSubmitForm = e => {
-        e.preventDefault();
-        alert(JSON.stringify(allValuesRegisterForm, null, 2));
+    const onSubmitForm = event => {
+        event.preventDefault();
+        alert(JSON.stringify(valuesRegisterForm, null, 2));
     };
+
+    
+    
 
     return (
         <React.Fragment>
@@ -38,11 +63,17 @@ const Register = () => {
                                 <div>
                                     <input 
                                         onChange={onUpdateField}
-                                        value={allValuesRegisterForm.firstName}
+                                        value={valuesRegisterForm.firstName}
                                         type="text" 
                                         placeholder="First name..." 
                                         name="firstName">
                                     </input>
+                                    <label>
+                                        {
+                                            error && 
+                                            <span>{valuesRegisterForm.firstName}</span>
+                                        }
+                                    </label>
                                 </div>
                             </div>
                             <div className="form-input-wrapper">
@@ -50,7 +81,7 @@ const Register = () => {
                                 <div>
                                     <input 
                                         onChange={onUpdateField}
-                                        value={allValuesRegisterForm.lastName}
+                                        value={valuesRegisterForm.lastName}
                                         type="text" 
                                         placeholder="Last name..." 
                                         name="lastName">
@@ -58,15 +89,16 @@ const Register = () => {
                                 </div>
                             </div>
                             <div className="form-input-wrapper">
-                                <label>E-mail address</label> 
+                                <label>Email address</label> 
                                 <div>
                                     <input 
                                         onChange={onUpdateField}
-                                        value={allValuesRegisterForm.email}
+                                        value={valuesRegisterForm.email}
                                         type="email" 
                                         placeholder="Email address..." 
                                         name="email">
-                                    </input>                               
+                                    </input>  
+                                    <label>{error && <span>{error}</span>}</label>
                                 </div>
                             </div>
                             <div className='form-input-wrapper'>
@@ -74,7 +106,7 @@ const Register = () => {
                                 <div>
                                     <input 
                                         onChange={onUpdateField}
-                                        value={allValuesRegisterForm.password}
+                                        value={valuesRegisterForm.password}
                                         type="password" 
                                         placeholder="Password..." 
                                         name="password">
@@ -86,7 +118,7 @@ const Register = () => {
                                 <div>
                                     <input 
                                         onChange={onUpdateField}
-                                        value={allValuesRegisterForm.confirmPassword}
+                                        value={valuesRegisterForm.confirmPassword}
                                         type="password" 
                                         placeholder="Confirm password..." 
                                         name="confirmPassword">
