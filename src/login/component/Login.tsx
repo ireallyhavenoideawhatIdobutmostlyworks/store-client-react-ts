@@ -13,7 +13,7 @@ const Login = () => {
                     <div>
                         <form className="form-wrapper">
                             <div className="form-input-wrapper">
-                                <label>E-mail address</label>
+                                <label>Email address</label>
                                 <div>
                                     <input type="email" placeholder="Email address..." aria-invalid="false" ></input>
                                 </div>
