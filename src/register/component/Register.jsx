@@ -1,8 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Register.scss';
 
 const Register = () => {
+
+    const [allValuesRegisterForm, setValuesRegisterForm] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+        confirmPassword: ""
+    });
+
+    const onUpdateField = e => {
+        setValuesRegisterForm({
+            ...allValuesRegisterForm,                                
+            [e.target.name]: e.target.value,          
+          });
+    };
+
+    const onSubmitForm = e => {
+        e.preventDefault();
+        alert(JSON.stringify(allValuesRegisterForm, null, 2));
+    };
+
     return (
         <React.Fragment>
             <section className='form-section'>
@@ -11,61 +32,65 @@ const Register = () => {
                         <h3>Register now!</h3>
                     </div>
                     <div>
-                        <form className="form-wrapper">
+                        <form className="form-wrapper" onSubmit={onSubmitForm}>
                             <div className="form-input-wrapper">
                                 <label>First name</label>
                                 <div>
                                     <input 
+                                        onChange={onUpdateField}
+                                        value={allValuesRegisterForm.firstName}
                                         type="text" 
                                         placeholder="First name..." 
                                         name="firstName">
                                     </input>
-                                    {/* <label>Mandatory</label> */}
                                 </div>
                             </div>
                             <div className="form-input-wrapper">
                                 <label>Last name</label>
                                 <div>
                                     <input 
+                                        onChange={onUpdateField}
+                                        value={allValuesRegisterForm.lastName}
                                         type="text" 
                                         placeholder="Last name..." 
                                         name="lastName">
                                     </input>
-                                    {/* <label>Mandatory</label> */}
                                 </div>
                             </div>
                             <div className="form-input-wrapper">
                                 <label>E-mail address</label> 
                                 <div>
                                     <input 
+                                        onChange={onUpdateField}
+                                        value={allValuesRegisterForm.email}
                                         type="email" 
                                         placeholder="Email address..." 
-                                        name="email"
-                                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                                        name="email">
                                     </input>                               
-                                    {/* <label>Mandatory</label> */}
                                 </div>
                             </div>
                             <div className='form-input-wrapper'>
                                 <label>Password</label>   
                                 <div>
                                     <input 
+                                        onChange={onUpdateField}
+                                        value={allValuesRegisterForm.password}
                                         type="password" 
                                         placeholder="Password..." 
                                         name="password">
                                     </input>                              
-                                    {/* <label>Mandatory</label> */}
                                 </div>                       
                             </div>
                             <div className='form-input-wrapper'>
                                 <label>Confirm password</label>   
                                 <div>
                                     <input 
+                                        onChange={onUpdateField}
+                                        value={allValuesRegisterForm.confirmPassword}
                                         type="password" 
                                         placeholder="Confirm password..." 
                                         name="confirmPassword">
                                     </input>                              
-                                    {/* <label>Mandatory</label> */}
                                 </div>                       
                             </div>
                             <div className="form-action-wrapper">
