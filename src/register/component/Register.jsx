@@ -1,3 +1,4 @@
+import { FALSE } from 'node-sass';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { RegisterService } from '../service/RegisterService';
@@ -13,35 +14,51 @@ const Register = () => {
         confirmPassword: ""
     });
 
-    
-    
-    const [error, setError] = useState(null);
-
-    const test = new RegisterService();
+    const [errors, setErrors] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+        confirmPassword: ""
+    });
 
     const onUpdateField = event => {
 
-        console.log(test.isFieldValid(event.target.value) + " " + event.target.name)
-
-        if (!test.isValidEmail(event.target.value)) {
-            setError('Email is invalid');
-        } else {
-            setError(null);
-        }
-
-        if (!test.isFieldValid(event.target.value)) {
-            setError('Field is invalid');
-        } else {
-            setError(null);
-        }
-
-     
-
-
         setValuesRegisterForm({...valuesRegisterForm, [event.target.name]: event.target.value});
+
+        // console.log(!/[^a-zA-Z]/.test(event.target.value))
+        
+        if(/[^a-zA-Z]/.test(event.target.value)){
+            setErrors({[event.target.name]:'Only alphabetic characters required' + " " + [event.target.name]})
+        }
+
+
+   
+            
     };
 
     const onSubmitForm = event => {
+
+
+
+        if(valuesRegisterForm.firstName.length < 4){
+            setErrors({[errors.firstName]:'firstName'})}
+
+        // if(valuesRegisterForm.lastName.length < 4){
+        //     setErrors({...errors,[event.target.name]:'lastName'})}
+
+        // if(valuesRegisterForm.email.length < 4){
+        //     setErrors({...errors,[event.target.name]:'email'})}
+
+        // if(valuesRegisterForm.password.length < 4){
+        //     setErrors({...errors,[event.target.name]:'password'})}
+
+        // if(valuesRegisterForm.confirmPassword.length < 4){
+        //     setErrors({...errors,[event.target.name]:'confirmPassword'})}
+
+        console.log(errors.firstName)
+        console.log([event.target.name])
+
         event.preventDefault();
         alert(JSON.stringify(valuesRegisterForm, null, 2));
     };
@@ -62,16 +79,17 @@ const Register = () => {
                                 <label>First name</label>
                                 <div>
                                     <input 
+                                        className={valuesRegisterForm.firstName ? '' : 'empty'}
                                         onChange={onUpdateField}
                                         value={valuesRegisterForm.firstName}
                                         type="text" 
                                         placeholder="First name..." 
                                         name="firstName">
                                     </input>
-                                    <label>
+                                    <label>                                      
                                         {
-                                            error && 
-                                            <span>{valuesRegisterForm.firstName}</span>
+                                            errors.firstName && 
+                                            <span>{errors.firstName}</span>
                                         }
                                     </label>
                                 </div>
@@ -80,53 +98,81 @@ const Register = () => {
                                 <label>Last name</label>
                                 <div>
                                     <input 
+                                        className={valuesRegisterForm.lastName ? '' : 'empty'}
                                         onChange={onUpdateField}
                                         value={valuesRegisterForm.lastName}
                                         type="text" 
                                         placeholder="Last name..." 
                                         name="lastName">
                                     </input>
+                                        {
+                                            errors.lastName && 
+                                            <span>{errors.lastName}</span>
+                                        }
                                 </div>
                             </div>
                             <div className="form-input-wrapper">
                                 <label>Email address</label> 
                                 <div>
                                     <input 
+                                        className={valuesRegisterForm.email ? '' : 'empty'}
                                         onChange={onUpdateField}
                                         value={valuesRegisterForm.email}
-                                        type="email" 
+                                        type="text" 
                                         placeholder="Email address..." 
                                         name="email">
                                     </input>  
-                                    <label>{error && <span>{error}</span>}</label>
+                                        {
+                                            errors.email && 
+                                            <span>{errors.email}</span>
+                                        }
                                 </div>
                             </div>
                             <div className='form-input-wrapper'>
                                 <label>Password</label>   
                                 <div>
                                     <input 
+                                        className={valuesRegisterForm.password ? '' : 'empty'}
                                         onChange={onUpdateField}
                                         value={valuesRegisterForm.password}
                                         type="password" 
                                         placeholder="Password..." 
                                         name="password">
-                                    </input>                              
+                                    </input>       
+                                        {
+                                            errors.password && 
+                                            <span>{errors.password}</span>
+                                        }                       
                                 </div>                       
                             </div>
                             <div className='form-input-wrapper'>
                                 <label>Confirm password</label>   
                                 <div>
                                     <input 
+                                        className={valuesRegisterForm.confirmPassword ? '' : 'empty'}
                                         onChange={onUpdateField}
                                         value={valuesRegisterForm.confirmPassword}
                                         type="password" 
                                         placeholder="Confirm password..." 
                                         name="confirmPassword">
-                                    </input>                              
+                                    </input>     
+                                    {
+                                        errors.confirmPassword && 
+                                        <span>{errors.confirmPassword}</span>
+                                    }                         
                                 </div>                       
                             </div>
                             <div className="form-action-wrapper">
-                                <button>Register</button>
+                                <button 
+                                    disabled=
+                                        { 
+                                            valuesRegisterForm.firstName === "" || 
+                                            valuesRegisterForm.lastName === "" || 
+                                            valuesRegisterForm.email === "" ||
+                                            valuesRegisterForm.password === "" ||
+                                            valuesRegisterForm.confirmPassword === ""
+                                        }>Register
+                                </button>
                             </div>
                         </form>
                     </div>
