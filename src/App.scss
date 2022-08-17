@@ -68,10 +68,6 @@ body * {
             font-weight: 700;
         }
     }
-
-    .empty {
-        border: red 1px solid;
-    }
 }
 
 .form-action-wrapper {
@@ -86,19 +82,12 @@ body * {
         font-weight: 700;
         text-transform: uppercase;
         border-radius: 10px;
+        background-color: #FC5628;
     }
 
     a {
         text-decoration: none;
         color: #6EA9E5;
-    }
-
-    .active {
-        background-color: #FC5628;
-    }
-    
-    .inactive {
-        background-color: gray;
     }
 }
 
