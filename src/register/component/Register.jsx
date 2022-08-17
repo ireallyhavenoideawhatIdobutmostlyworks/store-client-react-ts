@@ -1,4 +1,3 @@
-import { FALSE } from 'node-sass';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { RegisterService } from '../service/RegisterService';
@@ -164,14 +163,16 @@ const Register = () => {
                             </div>
                             <div className="form-action-wrapper">
                                 <button 
-                                    disabled=
-                                        { 
-                                            valuesRegisterForm.firstName === "" || 
-                                            valuesRegisterForm.lastName === "" || 
-                                            valuesRegisterForm.email === "" ||
-                                            valuesRegisterForm.password === "" ||
-                                            valuesRegisterForm.confirmPassword === ""
-                                        }>Register
+                                    className =
+                                        {
+                                            (valuesRegisterForm.firstName === "" || errors.firstName !== "") ||
+                                            (valuesRegisterForm.lastName === "" || errors.lastName !== "") ||
+                                            (valuesRegisterForm.email === "" || errors.email !== "") ||
+                                            (valuesRegisterForm.password === "" || errors.password !== "") ||
+                                            (valuesRegisterForm.confirmPassword === "" || errors.confirmPassword !== "")
+                                            ? 'inactive' : 'active'
+                                        }>
+                                    Register
                                 </button>
                             </div>
                         </form>

@@ -83,7 +83,6 @@ body * {
     button {
         height: 38px;
         color: #fff;
-        background-color: #FC5628;
         font-weight: 700;
         text-transform: uppercase;
         border-radius: 10px;
@@ -93,4 +92,13 @@ body * {
         text-decoration: none;
         color: #6EA9E5;
     }
+
+    .active {
+        background-color: #FC5628;
+    }
+    
+    .inactive {
+        background-color: gray;
+    }
 }
+
