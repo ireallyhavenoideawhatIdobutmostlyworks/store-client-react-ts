@@ -69,17 +69,6 @@ const Register = () => {
                 break; 
             } 
          }
-         console.log(valuesRegisterForm.password + "   pass")
-         console.log(valuesRegisterForm.confirmPassword + "    confir")
-         console.log(valuesRegisterForm.password === valuesRegisterForm.confirmPassword)
-            
-        //  if(valuesRegisterForm.password !== valuesRegisterForm.confirmPassword) {
-        //     setErrors({...errors, confirmPassword: 'Confirm password should be same like password'});
-        //     setFormValid(false);
-        //  } else {
-        //     setErrors({...errors, [event.target.name]: ''});
-        //     setFormValid(true);
-        // }
     };
 
     const onSubmitForm = event => {

@@ -5,7 +5,6 @@ import {Link} from 'react-router-dom';
 import testImg from './test-img.jpg';
 import sale from './sale.jpg';
 
-
 const HeaderSlider = () => {
     return (
         <React.Fragment>
