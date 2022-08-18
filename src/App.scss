@@ -63,7 +63,7 @@ body * {
         flex-direction: column;
         gap: 5px;
         
-        label {
+        span {
             color: red;
             font-weight: 700;
         }
@@ -79,10 +79,10 @@ body * {
     button {
         height: 38px;
         color: #fff;
-        background-color: #FC5628;
         font-weight: 700;
         text-transform: uppercase;
         border-radius: 10px;
+        background-color: #FC5628;
     }
 
     a {
@@ -90,3 +90,4 @@ body * {
         color: #6EA9E5;
     }
 }
+

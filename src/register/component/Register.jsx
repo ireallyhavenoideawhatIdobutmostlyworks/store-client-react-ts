@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { RegisterService } from '../service/RegisterService';
 import './Register.scss';
 
 const Register = () => {
 
-    const [allValuesRegisterForm, setValuesRegisterForm] = useState({
+    const [isFormValid, setFormValid] = useState(false);
+
+    const [valuesRegisterForm, setValuesRegisterForm] = useState({
         firstName: "",
         lastName: "",
         email: "",
@@ -12,16 +15,70 @@ const Register = () => {
         confirmPassword: ""
     });
 
-    const onUpdateField = e => {
-        setValuesRegisterForm({
-            ...allValuesRegisterForm,                                
-            [e.target.name]: e.target.value,          
-          });
+    const [errors, setErrors] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+        confirmPassword: ''
+    });
+
+    const onUpdateField = event => {
+        setValuesRegisterForm({...valuesRegisterForm, [event.target.name]: event.target.value});
+
+        switch(event.target.name) { 
+            case 'firstName':
+            case 'lastName': { 
+                if(/[^a-zA-Z]/.test(event.target.value)) {
+                    setErrors({...errors, [event.target.name]: 'Only alphabetic characters are allowed'});
+                    setFormValid(false);
+                } else {
+                    setErrors({...errors, [event.target.name]: ''});
+                    setFormValid(true);
+                }
+                break; 
+            } 
+            case 'email': { 
+                if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(event.target.value))) {
+                    setErrors({...errors, [event.target.name]: 'Incorrect email address'});
+                    setFormValid(false);
+                } else {
+                    setErrors({...errors, [event.target.name]: ''});
+                    setFormValid(true);
+                }
+                break; 
+            } 
+            case 'password': { 
+                if(event.target.value.length < 8){
+                    setErrors({...errors, [event.target.name]: 'Password is too short'});
+                    setFormValid(false);
+                } else {
+                    setErrors({...errors, [event.target.name]: ''});
+                    setFormValid(true);
+                }
+                break; 
+            } 
+            case 'confirmPassword': { 
+                if(valuesRegisterForm.password !== event.target.value){
+                    setErrors({...errors, [event.target.name]: 'Confirm password should be same like password'});
+                    setFormValid(false);
+                } else {
+                    setErrors({...errors, [event.target.name]: ''});
+                    setFormValid(true);
+                }
+                break; 
+            } 
+         }
     };
 
-    const onSubmitForm = e => {
-        e.preventDefault();
-        alert(JSON.stringify(allValuesRegisterForm, null, 2));
+    const onSubmitForm = event => {
+        event.preventDefault();
+
+        if(isFormValid) {
+            alert(JSON.stringify(valuesRegisterForm, null, 2));
+        } else {
+            alert(JSON.stringify('inwalid form', null, 2));
+        }
     };
 
     return (
@@ -38,11 +95,17 @@ const Register = () => {
                                 <div>
                                     <input 
                                         onChange={onUpdateField}
-                                        value={allValuesRegisterForm.firstName}
+                                        value={valuesRegisterForm.firstName}
                                         type="text" 
                                         placeholder="First name..." 
                                         name="firstName">
                                     </input>
+                                    <label>                                      
+                                        {
+                                            errors.firstName && 
+                                            <span>{errors.firstName}</span>
+                                        }
+                                    </label>
                                 </div>
                             </div>
                             <div className="form-input-wrapper">
@@ -50,23 +113,35 @@ const Register = () => {
                                 <div>
                                     <input 
                                         onChange={onUpdateField}
-                                        value={allValuesRegisterForm.lastName}
+                                        value={valuesRegisterForm.lastName}
                                         type="text" 
                                         placeholder="Last name..." 
                                         name="lastName">
                                     </input>
+                                    <label>                                      
+                                        {
+                                            errors.lastName && 
+                                            <span>{errors.lastName}</span>
+                                        }
+                                    </label>
                                 </div>
                             </div>
                             <div className="form-input-wrapper">
-                                <label>E-mail address</label> 
+                                <label>Email address</label> 
                                 <div>
                                     <input 
                                         onChange={onUpdateField}
-                                        value={allValuesRegisterForm.email}
-                                        type="email" 
+                                        value={valuesRegisterForm.email}
+                                        type="text" 
                                         placeholder="Email address..." 
                                         name="email">
-                                    </input>                               
+                                    </input>  
+                                    <label>                                      
+                                        {
+                                            errors.email && 
+                                            <span>{errors.email}</span>
+                                        }
+                                    </label>
                                 </div>
                             </div>
                             <div className='form-input-wrapper'>
@@ -74,11 +149,17 @@ const Register = () => {
                                 <div>
                                     <input 
                                         onChange={onUpdateField}
-                                        value={allValuesRegisterForm.password}
+                                        value={valuesRegisterForm.password}
                                         type="password" 
                                         placeholder="Password..." 
                                         name="password">
-                                    </input>                              
+                                    </input>       
+                                    <label>                                      
+                                        {
+                                            errors.password && 
+                                            <span>{errors.password}</span>
+                                        }
+                                    </label>                   
                                 </div>                       
                             </div>
                             <div className='form-input-wrapper'>
@@ -86,15 +167,21 @@ const Register = () => {
                                 <div>
                                     <input 
                                         onChange={onUpdateField}
-                                        value={allValuesRegisterForm.confirmPassword}
+                                        value={valuesRegisterForm.confirmPassword}
                                         type="password" 
                                         placeholder="Confirm password..." 
                                         name="confirmPassword">
-                                    </input>                              
+                                    </input>     
+                                    <label>                                      
+                                        {
+                                            errors.confirmPassword && 
+                                            <span>{errors.confirmPassword}</span>
+                                        }
+                                    </label>                      
                                 </div>                       
                             </div>
                             <div className="form-action-wrapper">
-                                <button>Register</button>
+                                <button className='register-button'>Register</button>
                             </div>
                         </form>
                     </div>
