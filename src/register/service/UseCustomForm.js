@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const UseValidation = () => {
+const UseCustomForm = () => {
 
     const [isFormValid, setFormValid] = useState(false);
     const [values, setValues] = useState({});
@@ -60,4 +60,4 @@ const UseValidation = () => {
     return {onUpdate, values, errors, isFormValid}
 }
 
-export default UseValidation
+export default UseCustomForm
