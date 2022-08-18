@@ -36,12 +36,7 @@ const Register = () => {
                                         placeholder="First name..." 
                                         name="firstName">
                                     </input>
-                                    <label>                                      
-                                        {
-                                            errors.firstName && 
-                                            <span>{errors.firstName}</span>
-                                        }
-                                    </label>
+                                    <label>{errors.firstName && <span>{errors.firstName}</span>}</label>
                                 </div>
                             </div>
                             <div className="form-input-wrapper">
@@ -53,12 +48,7 @@ const Register = () => {
                                         placeholder="Last name..." 
                                         name="lastName">
                                     </input>
-                                    <label>                                      
-                                        {
-                                            errors.lastName && 
-                                            <span>{errors.lastName}</span>
-                                        }
-                                    </label>
+                                    <label>{errors.lastName && <span>{errors.lastName}</span>}</label>
                                 </div>
                             </div>
                             <div className="form-input-wrapper">
@@ -70,12 +60,7 @@ const Register = () => {
                                         placeholder="Email address..." 
                                         name="email">
                                     </input>  
-                                    <label>                                      
-                                        {
-                                            errors.email && 
-                                            <span>{errors.email}</span>
-                                        }
-                                    </label>
+                                    <label>{errors.email && <span>{errors.email}</span>}</label>
                                 </div>
                             </div>
                             <div className='form-input-wrapper'>
@@ -87,12 +72,7 @@ const Register = () => {
                                         placeholder="Password..." 
                                         name="password">
                                     </input>       
-                                    <label>                                      
-                                        {
-                                            errors.password && 
-                                            <span>{errors.password}</span>
-                                        }
-                                    </label>                   
+                                    <label>{errors.password && <span>{errors.password}</span>}</label>                  
                                 </div>                       
                             </div>
                             <div className='form-input-wrapper'>
@@ -104,12 +84,7 @@ const Register = () => {
                                         placeholder="Confirm password..." 
                                         name="confirmPassword">
                                     </input>     
-                                    <label>                                      
-                                        {
-                                            errors.confirmPassword && 
-                                            <span>{errors.confirmPassword}</span>
-                                        }
-                                    </label>                      
+                                    <label>{errors.confirmPassword && <span>{errors.confirmPassword}</span>}</label>                        
                                 </div>                       
                             </div>
                             <div className="form-action-wrapper">
