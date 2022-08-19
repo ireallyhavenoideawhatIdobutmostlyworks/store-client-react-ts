@@ -176,7 +176,12 @@ const Register = () => {
                                 <label>Confirm password</label>   
                                 <div>
                                     <input 
+<<<<<<< HEAD
                                         onChange={handleChange}
+=======
+                                        onChange={onUpdateField}
+                                        value={valuesRegisterForm.confirmPassword}
+>>>>>>> bff8123036ea922f215160ea3437c7c2d1108be2
                                         type="password" 
                                         placeholder="Confirm password..." 
                                         name="confirmPassword">
