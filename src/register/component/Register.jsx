@@ -67,7 +67,7 @@ const Register = () => {
                                 <div>
                                     <input 
                                         onChange={onUpdate}
-                                        type="text" 
+                                        type="email" 
                                         placeholder="Email address..." 
                                         name="email">
                                     </input>  
