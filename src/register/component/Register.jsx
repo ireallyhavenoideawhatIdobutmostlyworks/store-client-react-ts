@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { RegisterService } from '../service/RegisterService';
 import './Register.scss';
-import UseValidation from '../service/UseValidation'
+import UseCustomForm from '../service/UseCustomForm'
 
 const Register = () => {
 
-    const {onUpdate, values, errors, isFormValid} = UseValidation();
+    const {onUpdate, values, errors, isFormValid} = UseCustomForm();
   
     const onSubmitForm = event => {
         event.preventDefault();
