@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { RegisterService } from '../service/RegisterService';
 import './Register.scss';
 import UseCustomForm from '../service/UseCustomForm'
 
