@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { RegisterService } from '../service/RegisterService';
 import './Register.scss';
 import UseCustomForm from '../service/UseCustomForm'
 
@@ -26,7 +27,7 @@ const Register = () => {
                         <h3>Register now!</h3>
                     </div>
                     <div>
-                        <form className="form-wrapper" onSubmit={onSubmitForm}>
+                        <form className="form-wrapper" onSubmit={handleSubmit}>
                             <div className="form-input-wrapper">
                                 <label>First name</label>
                                 <div>
