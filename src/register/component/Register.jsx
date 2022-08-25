@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Register.scss';
-import UseCustomForm from '../service/UseCustomForm'
+import UseValidation from '../service/UseValidation'
 
 const Register = () => {
 
-    const {onUpdate, values, errors, isFormValid} = UseCustomForm();
+    const {onUpdate, values, errors, isFormValid} = UseValidation();
   
     const onSubmitForm = event => {
         event.preventDefault();
@@ -56,7 +56,7 @@ const Register = () => {
                                 <div>
                                     <input 
                                         onChange={onUpdate}
-                                        type="text" 
+                                        type="email" 
                                         placeholder="Email address..." 
                                         name="email">
                                     </input>  
