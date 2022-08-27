@@ -1,18 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import UseCustomForm from '../service/UseCustomForm';
 import './Register.scss';
-import UseValidation from '../service/UseValidation'
+import { register } from '../service/RegisterService';
 
 const Register = () => {
 
-    const {onUpdate, values, errors, isFormValid} = UseValidation();
+    const {onUpdate, values, errors, isFormValid} = UseCustomForm();
   
     const onSubmitForm = event => {
         event.preventDefault();
 
-
         if(isFormValid) {
-            alert(JSON.stringify(values, null, 2));
+            register(values)
         } else {
             alert(JSON.stringify(errors, null, 2));
         }
@@ -26,7 +26,7 @@ const Register = () => {
                         <h3>Register now!</h3>
                     </div>
                     <div>
-                        <form className="form-wrapper" onSubmit={handleSubmit}>
+                        <form className="form-wrapper" onSubmit={onSubmitForm}>
                             <div className="form-input-wrapper">
                                 <label>First name</label>
                                 <div>
