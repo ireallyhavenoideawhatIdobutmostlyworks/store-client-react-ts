@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import UseCustomForm from '../service/UseCustomForm';
 import './Register.scss';
-
+import { registerUser } from '../service/RegisterService'
 
 const Register = () => {
 
@@ -13,7 +13,7 @@ const Register = () => {
 
 
         if(isFormValid) {
-            alert(JSON.stringify(values, null, 2));
+            registerUser(values);
         } else {
             alert(JSON.stringify(errors, null, 2));
         }
