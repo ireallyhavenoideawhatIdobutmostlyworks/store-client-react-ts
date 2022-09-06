@@ -1,11 +1,30 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './Slider.scss';
 import {TbTruckDelivery} from 'react-icons/tb';
 import {Link} from 'react-router-dom';
 import testImg from './test-img.jpg';
 import sale from './sale.jpg';
+import getProductForSlider from '../service/SliderService'
+import IProductslider from '../service/ProductSlider.dto';
+import axios, { AxiosResponse } from 'axios';
+import { AiOutlineConsoleSql } from 'react-icons/ai';
+import NumberFormat from 'react-number-format';
+
 
 const HeaderSlider = () => {
+
+    const [product, setProduct] = useState<IProductslider[]>([]); // useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+          const result = await axios('http://localhost:3000/api/product');  
+          setProduct(result.data);
+        };
+    
+        fetchData();
+      }, []);
+
+
     return (
         <React.Fragment>
             <main className="slider-container">
